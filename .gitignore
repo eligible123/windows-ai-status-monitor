@@ -1,0 +1,27 @@
+# Dependencies
+node_modules/
+
+# Frontend build output
+dist/
+
+# Tauri/Rust build output
+src-tauri/target/
+
+# Local logs
+*.log
+dev-run.err.log
+dev-run.out.log
+
+# Editor and OS files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Environment files
+.env
+.env.*
+
+# Keep packaged installer artifacts requested for distribution
+!release/
+!release/*.exe

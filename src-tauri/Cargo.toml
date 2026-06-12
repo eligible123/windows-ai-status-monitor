@@ -1,0 +1,32 @@
+[package]
+name = "windows-ai-status-monitor"
+version = "0.1.4"
+description = "A tiny Windows floating traffic-light status monitor for CLI AI agents."
+authors = ["Codex"]
+edition = "2021"
+license = "MIT"
+
+[build-dependencies]
+tauri-build = { version = "1.5", features = [] }
+
+[dependencies]
+anyhow = "1.0"
+chrono = { version = "0.4", features = ["serde"] }
+dirs = "5.0"
+regex = "1.12"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+tauri = { version = "1.8", features = [
+  "system-tray",
+  "shell-open",
+  "window-hide",
+  "window-show",
+  "window-set-position",
+  "window-start-dragging"
+] }
+winreg = "0.52"
+windows-sys = { version = "0.48", features = ["Win32_Foundation", "Win32_System_Diagnostics_ToolHelp", "Win32_System_Threading"] }
+
+[features]
+default = []
+custom-protocol = ["tauri/custom-protocol"]

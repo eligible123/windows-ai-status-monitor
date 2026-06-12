@@ -1,0 +1,201 @@
+:root {
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
+  color: #f8fafc;
+  background: transparent;
+  font-synthesis: none;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 220px;
+  height: 80px;
+  margin: 0;
+  overflow: hidden;
+  background: transparent;
+}
+
+button {
+  border: 0;
+  padding: 0;
+  color: inherit;
+  font: inherit;
+  background: transparent;
+}
+
+.panel {
+  width: 220px;
+  height: 80px;
+  padding: 5px;
+  user-select: none;
+  cursor: grab;
+  background: transparent;
+}
+
+.panel:active {
+  cursor: grabbing;
+}
+
+.panelShell {
+  position: relative;
+  width: 210px;
+  height: 70px;
+  padding: 10px 14px 8px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 16px;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.03)),
+    rgba(12, 18, 24, 0.78);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.22),
+    inset 0 -18px 40px rgba(0, 0, 0, 0.18),
+    0 12px 28px rgba(0, 0, 0, 0.32);
+  backdrop-filter: blur(18px) saturate(145%);
+}
+
+.panelShell::before {
+  position: absolute;
+  inset: 0;
+  content: "";
+  pointer-events: none;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.08), transparent 24%, transparent 76%, rgba(255, 255, 255, 0.05));
+}
+
+.topRow,
+.bottomRow {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.agent,
+.state {
+  max-width: 118px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  letter-spacing: 0;
+  text-align: left;
+}
+
+.agent {
+  font-size: 13px;
+  font-weight: 800;
+  color: #f8fafc;
+}
+
+.state {
+  max-width: 82px;
+  font-size: 12px;
+  font-weight: 800;
+  text-align: right;
+}
+
+.running .state { color: #86efac; }
+.waiting .state { color: #fde68a; }
+.idle .state { color: #fca5a5; }
+.offline .state { color: #cbd5e1; }
+
+.lights {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 30px);
+  gap: 13px;
+  align-items: center;
+  width: 116px;
+  height: 30px;
+  margin-top: 5px;
+}
+
+.light {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  transition: opacity 300ms ease, filter 300ms ease, box-shadow 300ms ease, transform 300ms ease;
+  box-shadow:
+    inset 0 2px 3px rgba(255, 255, 255, 0.28),
+    inset 0 -4px 8px rgba(0, 0, 0, 0.46),
+    0 2px 4px rgba(0, 0, 0, 0.38);
+}
+
+.light.dim {
+  opacity: 0.24;
+  filter: saturate(0.58) brightness(0.58);
+}
+
+.red {
+  background: radial-gradient(circle at 34% 28%, #fecaca 0 10%, #ef4444 38%, #7f1d1d 100%);
+}
+
+.yellow {
+  background: radial-gradient(circle at 34% 28%, #fef3c7 0 10%, #f59e0b 40%, #78350f 100%);
+}
+
+.green {
+  background: radial-gradient(circle at 34% 28%, #bbf7d0 0 10%, #22c55e 42%, #14532d 100%);
+}
+
+.red.active {
+  opacity: 1;
+  box-shadow:
+    inset 0 2px 4px rgba(255, 255, 255, 0.36),
+    inset 0 -5px 9px rgba(77, 11, 11, 0.5),
+    0 0 15px rgba(239, 68, 68, 0.8),
+    0 0 32px rgba(239, 68, 68, 0.42);
+}
+
+.yellow.active {
+  animation: blink 1s steps(2, start) infinite;
+  box-shadow:
+    inset 0 2px 4px rgba(255, 255, 255, 0.38),
+    inset 0 -5px 9px rgba(113, 63, 18, 0.48),
+    0 0 15px rgba(245, 158, 11, 0.88),
+    0 0 34px rgba(245, 158, 11, 0.46);
+}
+
+.green.active {
+  animation: breathe 1.7s ease-in-out infinite;
+  box-shadow:
+    inset 0 2px 4px rgba(255, 255, 255, 0.36),
+    inset 0 -5px 9px rgba(20, 83, 45, 0.46),
+    0 0 16px rgba(34, 197, 94, 0.9),
+    0 0 34px rgba(34, 197, 94, 0.48);
+}
+
+.bottomRow {
+  height: 13px;
+  margin-top: -1px;
+  color: rgba(226, 232, 240, 0.6);
+  font-size: 9px;
+  font-weight: 700;
+}
+
+@keyframes breathe {
+  0%, 100% {
+    transform: scale(1);
+    filter: brightness(1);
+  }
+  50% {
+    transform: scale(1.05);
+    filter: brightness(1.22);
+  }
+}
+
+@keyframes blink {
+  0%, 49% {
+    opacity: 1;
+    filter: brightness(1.16);
+  }
+  50%, 100% {
+    opacity: 0.38;
+    filter: brightness(0.74);
+  }
+}

@@ -1,0 +1,78 @@
+{
+    "$schema":  "https://schema.tauri.app/config/1",
+    "build":  {
+                  "beforeDevCommand":  "npm run dev",
+                  "beforeBuildCommand":  "npm run build",
+                  "devPath":  "http://127.0.0.1:1420",
+                  "distDir":  "../dist"
+              },
+    "package":  {
+                    "productName":  "Windows AI Status Monitor",
+                    "version":  "0.1.4"
+                },
+    "tauri":  {
+                  "allowlist":  {
+                                    "all":  false,
+                                    "shell":  {
+                                                  "all":  false,
+                                                  "open":  true
+                                              },
+                                    "window":  {
+                                                   "all":  false,
+                                                   "hide":  true,
+                                                   "show":  true,
+                                                   "setPosition":  true,
+                                                   "startDragging":  true
+                                               }
+                                },
+                  "bundle":  {
+                                 "active":  true,
+                                 "targets":  [
+                                                 "nsis"
+                                             ],
+                                 "identifier":  "com.codex.windows-ai-status-monitor",
+                                 "publisher":  "Codex",
+                                 "category":  "DeveloperTool",
+                                 "shortDescription":  "Floating status monitor for CLI AI agents",
+                                 "longDescription":  "A tiny always-on-top Windows traffic-light panel that monitors Claude Code, Codex CLI, Gemini CLI and other command-line AI agents.",
+                                 "windows":  {
+                                                 "nsis":  {
+                                                              "displayLanguageSelector":  false
+                                                          }
+                                             },
+                                 "icon":  [
+                                              "icons/icon.ico"
+                                          ]
+                             },
+                  "security":  {
+                                   "csp":  null
+                               },
+                  "windows":  [
+                                  {
+                                      "label":  "main",
+                                      "title":  "Windows AI Status Monitor",
+                                      "width":  220,
+                                      "height":  80,
+                                      "minWidth":  220,
+                                      "minHeight":  80,
+                                      "maxWidth":  220,
+                                      "maxHeight":  80,
+                                      "resizable":  false,
+                                      "maximizable":  false,
+                                      "minimizable":  false,
+                                      "closable":  false,
+                                      "fullscreen":  false,
+                                      "focus":  false,
+                                      "transparent":  true,
+                                      "decorations":  false,
+                                      "alwaysOnTop":  true,
+                                      "skipTaskbar":  true,
+                                      "visible":  true
+                                  }
+                              ],
+                  "systemTray":  {
+                                     "iconPath":  "icons/icon.ico",
+                                     "iconAsTemplate":  false
+                                 }
+              }
+}
