@@ -14,8 +14,8 @@
 html,
 body,
 #root {
-  width: 220px;
-  height: 80px;
+  width: 250px;
+  height: 90px;
   margin: 0;
   overflow: hidden;
   background: transparent;
@@ -30,8 +30,8 @@ button {
 }
 
 .panel {
-  width: 220px;
-  height: 80px;
+  width: 250px;
+  height: 90px;
   padding: 5px;
   user-select: none;
   cursor: grab;
@@ -44,9 +44,9 @@ button {
 
 .panelShell {
   position: relative;
-  width: 210px;
-  height: 70px;
-  padding: 10px 14px 8px;
+  width: 240px;
+  height: 80px;
+  padding: 10px 18px 9px;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: 16px;
@@ -78,7 +78,7 @@ button {
 
 .agent,
 .state {
-  max-width: 118px;
+  max-width: 145px;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -93,7 +93,7 @@ button {
 }
 
 .state {
-  max-width: 82px;
+  max-width: 90px;
   font-size: 12px;
   font-weight: 800;
   text-align: right;
@@ -108,11 +108,11 @@ button {
   position: relative;
   display: grid;
   grid-template-columns: repeat(3, 30px);
-  gap: 13px;
+  gap: 14px;
   align-items: center;
   width: 116px;
   height: 30px;
-  margin-top: 5px;
+  margin-top: 6px;
 }
 
 .light {
@@ -171,10 +171,11 @@ button {
 }
 
 .bottomRow {
-  height: 13px;
-  margin-top: -1px;
+  height: 14px;
+  margin-top: 4px;
+  line-height: 14px;
   color: rgba(226, 232, 240, 0.6);
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 700;
 }
 

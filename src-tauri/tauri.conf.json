@@ -8,7 +8,7 @@
               },
     "package":  {
                     "productName":  "Windows AI Status Monitor",
-                    "version":  "0.1.4"
+                    "version":  "0.1.5"
                 },
     "tauri":  {
                   "allowlist":  {
@@ -51,12 +51,12 @@
                                   {
                                       "label":  "main",
                                       "title":  "Windows AI Status Monitor",
-                                      "width":  220,
-                                      "height":  80,
-                                      "minWidth":  220,
-                                      "minHeight":  80,
-                                      "maxWidth":  220,
-                                      "maxHeight":  80,
+                                      "width":  250,
+                                      "height":  90,
+                                      "minWidth":  250,
+                                      "minHeight":  90,
+                                      "maxWidth":  250,
+                                      "maxHeight":  90,
                                       "resizable":  false,
                                       "maximizable":  false,
                                       "minimizable":  false,

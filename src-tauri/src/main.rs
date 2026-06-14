@@ -16,6 +16,7 @@ use std::{
 use tauri::{api::shell, AppHandle, Manager, PhysicalPosition, State, SystemTrayEvent};
 
 type SharedMonitor = Arc<Mutex<MonitorRuntime>>;
+const WINDOW_WIDTH: i32 = 250;
 
 #[tauri::command]
 fn get_status(monitor: State<SharedMonitor>) -> Result<StatusPayload, String> {
@@ -198,7 +199,7 @@ fn position_main_window(app: &AppHandle) {
     if let Ok(Some(monitor)) = window.current_monitor() {
         let size = monitor.size();
         let origin = monitor.position();
-        let x = origin.x + size.width as i32 - 220 - 18;
+        let x = origin.x + size.width as i32 - WINDOW_WIDTH - 18;
         let y = origin.y + 18;
         window.set_position(PhysicalPosition::new(x, y)).ok();
     }

@@ -44,7 +44,7 @@ Use the tray menu to switch the active monitor target.
 The generated Windows installer is included in this repository under:
 
 ```text
-release/Windows AI Status Monitor_0.1.4_x64-setup.exe
+release/Windows AI Status Monitor_0.1.5_x64-setup.exe
 ```
 
 After installation, the app starts in the background and shows the floating panel near the top-right corner of the desktop.
@@ -81,7 +81,7 @@ npm.cmd run package:exe
 The NSIS installer is generated at:
 
 ```text
-src-tauri\target\release\bundle\nsis\Windows AI Status Monitor_0.1.4_x64-setup.exe
+src-tauri\target\release\bundle\nsis\Windows AI Status Monitor_0.1.5_x64-setup.exe
 ```
 
 ## Project Structure
